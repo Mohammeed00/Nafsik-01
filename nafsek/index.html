@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة نفسك</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Nafsak Logo" class="logo">
+    </header>
+    <div id="loginPage" class="page active animate__animated animate__fadeIn">
+        <h2>تسجيل الدخول</h2>
+        <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+        <input type="password" id="password" placeholder="كلمة المرور" required>
+        <button onclick="login()"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</button>
+        <p id="loginError" class="error"></p>
+    </div>
+    <div id="assessmentPage" class="page animate__animated animate__fadeIn">
+        <h2>التقييم النفسي</h2>
+        <p>كيف تشعر اليوم؟</p>
+        <label><input type="radio" name="mood" value="جيد"> جيد</label>
+        <label><input type="radio" name="mood" value="متوسط"> متوسط</label>
+        <label><input type="radio" name="mood" value="سيء"> سيء</label>
+        <button onclick="submitAssessment()"><i class="fas fa-paper-plane"></i> إرسال التقييم</button>
+    </div>
+    <div id="resultPage" class="page animate__animated animate__fadeIn">
+        <h2>نتيجة التقييم</h2>
+        <p id="resultMessage">...</p>
+        <button onclick="restart()"><i class="fas fa-redo"></i> العودة للتقييم</button>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

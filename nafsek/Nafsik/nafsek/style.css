@@ -1,0 +1,110 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif; /* خط عربي */
+    background: url('background.jpg') no-repeat center center fixed; /* إضافة صورة خلفية */
+    background-size: cover; /* تغطية الخلفية */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* تأثير الضبابية على الخلفية */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(240, 248, 249, 0.7); /* لون خلفية مع شفافية */
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2; /* جعل الشعار فوق الضبابية */
+}
+
+.logo {
+    width: 200px; /* زيادة حجم الشعار */
+    transition: transform 0.3s; /* تأثير التحول */
+}
+
+.logo:hover {
+    transform: scale(1.1); /* تأثير تكبير عند المرور */
+}
+
+.page {
+    display: none;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px; /* زيادة padding */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    border-radius: 15px; /* زيادة الزوايا الدائرية */
+    width: 90%; /* عرض مرن */
+    max-width: 400px; /* الحد الأقصى للعرض */
+    transition: transform 0.3s; /* تأثير التحول */
+    z-index: 2; /* جعل المحتوى فوق الضبابية */
+}
+
+.page.active {
+    display: block;
+}
+
+input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 15px; 
+    margin: 15px 0; 
+    border: 2px solid #b0c4c8;
+    border-radius: 5px;
+    font-size: 1em; 
+    transition: border-color 0.3s; /* تأثير التحول */
+}
+
+input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #4ca1a3; /* تغيير لون الحدود عند التركيز */
+}
+
+button {
+    padding: 12px 24px; 
+    background-color: #4ca1a3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600; /* زيادة الوزن */
+}
+
+button:hover {
+    background-color: #428a8a;
+    transform: scale(1.05);
+}
+
+.error {
+    color: red;
+    font-size: 1em; 
+    margin-top: 10px;
+}
+
+h2 {
+    color: #2d5557;
+    font-size: 1.8em; /* زيادة حجم الخط */
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    color: #3b7476;
+}

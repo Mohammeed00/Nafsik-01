@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة نفسك</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet"> <!-- خط عربي -->
+</head>
+<body>
+
+    <!-- الشعار -->
+    <header>
+        <img src="logo.png" alt="Nafsak Logo" class="logo">
+    </header>
+
+    <!-- صفحة تسجيل الدخول -->
+    <div id="loginPage" class="page active">
+        <h2>تسجيل الدخول</h2>
+        <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+        <input type="password" id="password" placeholder="كلمة المرور" required>
+        <button onclick="login()">تسجيل الدخول</button>
+        <p id="loginError" class="error"></p>
+    </div>
+
+    <!-- صفحة التقييم النفسي -->
+    <div id="assessmentPage" class="page">
+        <h2>التقييم النفسي</h2>
+        <p>كيف تشعر اليوم؟</p>
+        <label><input type="radio" name="mood" value="جيد"> جيد</label>
+        <label><input type="radio" name="mood" value="متوسط"> متوسط</label>
+        <label><input type="radio" name="mood" value="سيء"> سيء</label>
+        <button onclick="submitAssessment()">إرسال التقييم</button>
+    </div>
+
+    <!-- صفحة عرض النتائج -->
+    <div id="resultPage" class="page">
+        <h2>نتيجة التقييم</h2>
+        <p id="resultMessage">...</p>
+        <button onclick="restart()">العودة للتقييم</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
